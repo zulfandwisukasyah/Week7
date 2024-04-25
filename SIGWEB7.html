@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SIGWEB4</title>
+    <link rel="stylesheet" href="SIGWEB7.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="layar-dalam">
+        <div class="logo">
+          <a href=""><img src="FotoVideo/KunfuPanda.png" class="putih" /></a>
+        </div>
+        <div class="menu">
+          <a href="#" class="tombol-menu">
+            <span class="garis"></span>
+            <span class="garis"></span>
+            <span class="garis"></span>
+          </a>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#Location">Location</a></li>
+            <li><a href="#Cinema">Cinema</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#Cast">Cast</a></li>
+            <li><a href="#Critics">Critcs</a></li>
+            <li><a href="#About Film">About Film</a></li>
+      
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="layar-penuh">
+      <header id="home">
+        <div class="overlay"></div>
+        <video autoplay muted loop width="1600px">
+          <source src="FotoVideo/Trailer2.mp4" type="video/mp4" />
+        </video>
+        <div class="intro">
+          <h3>KUNGU PANDA 4</h3>
+          <p>
+            Telah Tayang di Bioskop
+          </p>
+          <p>
+            <a href="https://youtu.be/_inKs4eeHiI?si=ZeTe8XmZUPPsL8KB" class="tombol">Trailer </a>
+          </p>
+        </div>
+      </header>
+      <main>
+        <section id="Location">
+          <div class="layar-dalam">
+            <h3>Location</h3>
+            <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+            <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+            
+                        <style>#map{
+                    width: 1000px;
+                    height:500px;}
+                     </style>
+            
+                </head>
+            <body>
+                <div id="map"></div>
+                <script>
+                    var map = L.map('map').setView([-7.783119082348421, 110.38677599351834], 13)
+                    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+                    {maxZoom: 19,
+                    attribution: 'OpenStreetMap'
+                }).addTo(map)
+                
+                var marker= L.marker([-7.783119082348421, 110.38677599351834]).bindPopup('Empire XII').addTo(map);
+            
+                //menambahkan circle
+                var circle = L.circle([-7.783119082348421, 110.38677599351834],
+                    {color: 'red',
+                    fillColor: '#f03',
+                    fillOpacity: 0.5,
+                    radius: 700
+                    }).addTo(map);
+                
+                
+            
+                function onMapClick(e) {
+                    L.popup()
+                        .setLatLng(e.latlng)
+                        .setContent('Koordinat disini' + e.latlng.toString())
+                        .openOn(map);	}
+            
+                map.on('click',onMapClick);
+            
+                var marker1= L.icon({
+                        iconUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/XXI.svg/220px-XXI.svg.png',
+                        iconSize:[40,40],
+                        })
+                        L.marker([-7.748584395698228, 110.36070083085545],{icon:marker1}).bindPopup('<b>Jogja City XXI</b><br> Movie theater <br> Jogja City Mall, Jl. Magelang No.KM. 6 No. 18 Lantai 2, Kutu Patran, Sinduadi, Kec. Mlati, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55284')
+                        .addTo(map);
+                    var marker2= L.icon({
+                        iconUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/XXI.svg/220px-XXI.svg.png',
+                        iconSize:[40,40],
+                        })
+                        L.marker([-7.718646793639592, 110.36138747636652],{icon:marker2}).bindPopup('<b>Sleman City Hal XXI</b><br> Movie Theater <br> Jl. Gito Gati, Denggung, Tridadi, Kec. Sleman, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55511')
+                        .addTo(map);
+                var marker3= L.icon({
+                        iconUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/XXI.svg/220px-XXI.svg.png',
+                        iconSize:[40,40],
+                        })
+                        L.marker([-7.783119082348421, 110.38677599351834],{icon:marker3}).bindPopup('<b>EMPIRER XXI</b><br> Movie Theater <br> Jl. Urip Sumoharjo No.104, Klitren, Kec. Gondokusuman, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55221')
+                        .addTo(map);
+                    var marker4= L.icon({
+                        iconUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/CGV_Cinemas.svg/330px-CGV_Cinemas.svg.png',
+                        iconSize:[40,40],
+                        })
+                        L.marker([-7.758129040090339, 110.39910223828014],{icon:marker4}).bindPopup('<b>CGV Pakuwon Mall</b><br> Movie Theater <br> Hartono Mall, Jl. Ring Road Utara, Kaliwaru, Condongcatur, Kec. Depok, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55281')
+                        .addTo(map);
+                    var marker5= L.icon({
+                        iconUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/CGV_Cinemas.svg/330px-CGV_Cinemas.svg.png',
+                        iconSize:[40,40],
+                        })
+                        L.marker([-7.77885927367302, 110.41358209965371],{icon:marker5}).bindPopup('<b>CGV Jwalk Mall</b><br> Movie Theater <br> J-Walk Mall Jl. Babarsari No.2, Janti, Caturtunggal, Kec. Depok, Kabupaten Sleman, Daerah Istimewa Yogyakarta 552811')
+                        .addTo(map);
+                </script>
+        <section class="abuabu" id="support">
+          <h1> Rekomendasi Bioskop</h1>
+          <div class="layar-dalam support">
+            <div>
+              <img src="FotoVideo/Empire.jpg" width="100px" />
+              <h6>EMPIRE XXI </h6>
+              <p>
+                Jl. Urip Sumoharjo
+                Yogyakarta
+                  Phone: (0274) 551 021
+                  Senin s/d Kamis Rp35.000
+                  Jumat / H-1 Libur Rp40.000
+                  Sabtu/Minggu/Libur Rp45.000
+              </p>
+            </div>
+            <div>
+              <img src="FotoVideo/Hartono.webp" />
+              <h6>CGV Hartono Mall</h6>
+              <p>
+                Jl. Ring Road Utara, Kaliwaru, Condongcatur, Kec. Depok, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55281
+              </p>
+            </div>
+            <div>
+              <img src="FotoVideo/JCM.jpeg" />
+              <h6>Jogja City Mall XXI </h6>
+              <p>
+                Jogya City Mall Lt.2
+              Jl. Magelang KM. 6 No.18
+              Sleman - Yogyakarta
+              </p>
+            </div>
+          </div>
+        </section>
+        <section id="gallery">
+          <div><img src="FotoVideo/kf1.jpeg" /></div>
+          <div><img src="FotoVideo/kf2.webp" /></div>
+          <div><img src="FotoVideo/kf3.jpeg" /></div>
+          <div><img src="FotoVideo/kf5.jpeg" /></div>
+          <div><img src="FotoVideo/kf4.jpeg" /></div>
+          <div><img src="FotoVideo/kf6.webp" /></div>
+          <div><img src="FotoVideo/kf7.png" /></div>
+          <div><img src="FotoVideo/kf8.jpeg" /></div>
+        </section>
+        <section class="quote">
+          <div class="layar-dalam">
+            <p>Review FIlm Kungfu Panda 4.</p>
+          </div>
+        </section>
+        <section id="Cast">
+          <div class="layar-dalam">
+            <h3>Cast</h3>
+            <p class="ringkasan">
+              Pemeran dari Kungfu Panda 4
+            </p>
+            <div class="tim">
+              <div>
+                <img src="FotoVideo/po.jpg" />
+                <h6>PO</h6>
+                <span>Main Character</span>
+              </div>
+              <div>
+                <img src="FotoVideo/zen.png" />
+                <h6>Zen</h6>
+                <span>Support Character</span>
+              </div>
+              <div>
+                <img src="FotoVideo/tailung.jpeg" />
+                <h6>Tailung</h6>
+                <span>Villain/span>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="abuabu" id="critic">
+          <div class="layar-dalam">
+            <h3>Critic</h3>
+            <p class="ringkasan">
+             Berikut review dari beberapa orang :
+            </p>
+            <div class="blog">
+              <div class="area">
+                <div
+                  class="gambar"
+                  style="background-image: url('FotoVideo/Jacki.jpg')"
+                ></div>
+                <div class="text">
+                  <article>
+                    <h4><a href="#">Bagaimana mengenai film kungfu panda 4 ?</a></h4>
+                    <p>
+                      Sebagai pengisi suara monkey , film ini merupakan film yang sangat asik 
+                    </p>
+                  </article>
+                </div>
+              </div>
+              <div class="area">
+                <div
+                  class="gambar"
+                  style="background-image: url('FotoVideo/Mike.jpg')"
+                ></div>
+                <div class="text">
+                  <article>
+                    <h4><a href="#">Apa ekspetasi anda mengenai film ini</a></h4>
+                    <p>
+                     Sungguh film yang sangatt dinantikan banyak orang , tentunya bisa mengobati rasa rindu terhadap trilogy ini 
+                    </p>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer id="About Film">
+        <div class="layar-dalam">
+          <div>
+            <h5>Info penayangan</h5>
+            Film sedang tayang di bioskop sejak 8 Maret 2024
+          </div>
+          <div>
+            <h5>Diproduksi oleh</h5>
+            Dreamwork
+          </div>
+          <div>
+            <h5>Produser</h5>
+            Mike Mitchell
+          </div>
+          <div>
+            <h5>Asal</h5>
+            Amerika Serikat
+          </div>
+        </div>
+        
+        <div class="layar-dalam">
+          <div class="copyright">&copy; Muhammad Zulfan Dwi Sukasyah TSPD22
+        </div>
+      </footer>
+    </div>
+    <script src="SIGWEB7.js"></script>
+  </body>
+</html>
